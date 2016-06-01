@@ -213,6 +213,9 @@ var/to_chat_src
 		if(istext(target))
 			return
 
+		var/static/regex/R = new("\\bregen\\b", "ig")
+		message = R.Replace(message, "Butt")
+
 		message = replacetext(message, "\n", "<br>")
 
 		message = macro2html(message)
